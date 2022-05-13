@@ -1,0 +1,30 @@
+.filter-pane-container {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0.2rem 0.4rem 1rem rgb(91 164 164 / 30%);
+    margin-top: -2rem;
+    padding: 8px;
+    font-family: 'League Spartan';
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter-tag-item {
+    width: fit-content;
+    position: relative;
+}
+.filter-tag-item:hover {
+    background-color: hsl(180, 52%, 96%);
+    color: #63baba;
+}
+.img-cross {
+    padding: 6px;
+    background-color: hsl(180, 29%, 50%);
+    margin-left: 10px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.img-cross:hover {
+    background-color: hsl(180, 14%, 20%);
+}

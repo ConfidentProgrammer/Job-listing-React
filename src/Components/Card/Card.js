@@ -1,7 +1,17 @@
 import React from 'react'
-import faceit from '../../Images/faceit.svg'
 import './Card.css'
+import {useSelector, useDispatch} from 'react-redux'
+import {getFilteredItems} from '../../Redux/Actions/getFilteredItems'
 function Card({companyName, New, featured, role, postedAt, contract, location, languages, src }) {
+
+//getting the filtered Items from redux
+const filteredItem = useSelector(state => state.filteredItems)
+
+//using dispatch
+const dispatch = useDispatch();
+const handleFilterClicks = (e) => {
+ dispatch(getFilteredItems(e.target.innerHTML))
+}
   return (
     <div className='card-container'>
         <span className="side"></span>
@@ -31,7 +41,7 @@ function Card({companyName, New, featured, role, postedAt, contract, location, l
      <div className="tags-container">
             {
             languages.map(lang => (
-                <p className="tag-item">{lang}</p>
+                <p key={lang} className="tag-item" onClick={handleFilterClicks}>{lang}</p>
             ))
             }
         </div>
